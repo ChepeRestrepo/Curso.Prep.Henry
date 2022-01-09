@@ -17,7 +17,7 @@ function mayoriaDeEdad(edad) {
   //Si es menor, devolver --> "Not allowed"
   if (edad >= 18) {
     return "Allowed";
-  } else if (edad < 18) {
+  } else {
     return "Not allowed";
   }
 }
@@ -45,13 +45,13 @@ function saludo(idioma) {
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
   if (idioma === "aleman") {
-    return "GutenTag";
+    return "Guten Tag!";
   } else if (idioma === "mandarin") {
     return "Ni Hao!";
   } else if (idioma === "ingles") {
     return "Hello!";
   } else {
-    return "Hola";
+    return "Hola!";
   }
 }
 
@@ -67,13 +67,12 @@ function colors(color) {
   switch (color) {
     case "blue":
       return "This is blue";
-      break;
     case "red":
       return "This is red";
-      break;
     case "green":
       return "This is green";
-      break;
+    case "orange":
+      return "This is orange";
     default:
       return "Color not found";
   }
@@ -83,22 +82,14 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero === 10 || numero === 5) {
-    return "true";
-  } else {
-    return "false";
-  }
+  return numero === 10 || numero === 5;
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero < 50 && numero > 20) {
-    return "true";
-  } else {
-    return "false";
-  }
+  return numero < 50 && numero > 20;
 }
 
 function esEntero(numero) {
@@ -109,12 +100,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-
-  if (Number.isInteger(numero)) {
-    return "true";
-  } else {
-    return "false";
-  }
+  return numero % 1 === 0;
 }
 
 function fizzBuzz(numero) {
@@ -122,28 +108,23 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero % 3 === 0) {
-    return "fizz";
-  } else if (numero % 5 === 0) {
-    return "buzz";
-  } else if (numero % 3 === 0 && numero % 5 === 0) {
-    return "fizzbuzz";
-  } else {
-    return numero;
-  }
+  if (numero % 15 === 0) return "fizzbuzz";
+  if (numero % 3 === 0) return "fizz";
+  if (numero % 5 === 0) return "buzz";
+  return numero;
 }
 
 function operadoresLogicos(num1, num2, num3) {
-  if (num1 > 0 && num1 > num2 && num1 > num3) {
-    return "Número 1 es mayor y positivo";
-  } else if (num1 < 0 || num2 < 0 || num3 < 0) {
+  if (num1 < 0 || num2 < 0 || num3 < 0) {
     return "Hay negativos";
+  } else if (num1 === 0 || num2 === 0 || num3 === 0) {
+    return "Error";
+  } else if (num1 > 0 && num1 > num2 && num1 > num3) {
+    return "Número 1 es mayor y positivo";
   } else if (num3 > num1 && num3 > num2) {
     return num3 + 1;
-  } else if (num1 == 0 || num2 == 0 || num3 == 0) {
-    return "Error";
   } else {
-    return "false";
+    return false;
   }
 }
 
@@ -154,12 +135,8 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
 
-  if (numero < 2) {
-    return false;
-  }
-  if (numero === 2) {
-    return true;
-  }
+  if (numero < 2) return false;
+  if (numero === 2) return true;
   for (var i = 2; i < numero; i++) {
     if (numero % i === 0) {
       return false;
@@ -172,18 +149,18 @@ function esVerdadero(valor) {
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero”
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-  if (valor == true) {
+  if (valor === true) {
     return "Soy verdadero";
   }
   return "Soy falso";
 }
 
 function tablaDelSeis() {
-  for (var i = 6; i == 6; i++) {
-    for (var j = 0; j < 11; j++) {
-      return i + " X " + j + " = " + i * j;
-    }
+  let arrayTableDel6 = [];
+  for (let i = 0; i < 11; i++) {
+    arrayTableDel6.push(6 * i);
   }
+  return arrayTableDel6;
 }
 
 function tieneTresDigitos(numero) {
@@ -191,9 +168,8 @@ function tieneTresDigitos(numero) {
   //Escribe tu código aquí
   if (numero > 99 && numero < 1000) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 function doWhile(numero) {
