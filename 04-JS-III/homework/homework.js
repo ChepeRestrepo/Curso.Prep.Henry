@@ -184,7 +184,7 @@ function mayorACien(array) {
   var nuevoArray = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i] > 100) {
-      nuevoArray;.push(array[i]);
+      nuevoArray.push(array[i]);
     }
   }
   return nuevoArray;
@@ -200,18 +200,18 @@ function breakStatement(numero) {
   // Tu código:
   var array = [];
   var suma = numero;
-  for(var i = 0; i < 10; i++){
+  for (var i = 0; i < 10; i++) {
     suma += 2;
-    if(suma === i) break;
-    else{
+    if (suma === i) break;
+    else {
       array.push(suma);
     }
   }
-    if(i < 10){
-      return "Se interrumpio la ejecución";
-    }else{
-      return array;
-    }
+  if (i < 10) {
+    return "Se interrumpio la ejecución";
+  } else {
+    return array;
+  }
 }
 
 function continueStatement(numero) {
@@ -222,15 +222,15 @@ function continueStatement(numero) {
   //Pista: usá el statement 'continue'
   // Tu código:
   var array = [];
-  var suma = numero; 
-  for(var i = 0; i < 10; i++){
-    if(i ===5) continue;
-    else{
-    suma +=2;
-    array.push(suma);
+  var suma = numero;
+  for (var i = 0; i < 10; i++) {
+    if (i === 5) continue;
+    else {
+      suma += 2;
+      array.push(suma);
+    }
   }
-}
-return array;
+  return array;
 }
 
 // No modificar nada debajo de esta línea
