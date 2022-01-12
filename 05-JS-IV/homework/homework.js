@@ -66,8 +66,9 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if (usuario[email]) return true;
-  else {
+  if (usuario["email"]) {
+    return true;
+  } else {
     return false;
   }
 }
@@ -149,7 +150,7 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto.calcularPrecioDeDescuento = function () {
+  producto.calcularPrecioDescuento = function () {
     return this.precio - this.precio * this.porcentajeDeDescuento;
   };
   return producto;
